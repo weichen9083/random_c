@@ -1,8 +1,23 @@
 class RandomC::Anime
 
-    @@all =["anime1", "anime2", "anime3"]
+    attr_accessor :name
+
+
+    @@all =[]
+
+    def initialize(name)
+        @name =  name 
+        save    
+    end 
+
+    def save 
+        @@all << self
+    end 
+
 
     def self.all
-        @@all
+        @@all     
     end 
+
+
 end 
