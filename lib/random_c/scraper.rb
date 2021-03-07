@@ -1,0 +1,7 @@
+class RandomC::Scraper 
+
+
+
+
+
+end 

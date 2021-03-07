@@ -1,7 +1,11 @@
 require_relative "./random_c/version"
+require_relative "./random_c/scraper"
 require_relative "./random_c/cli"
-require "pry"
+require_relative "./random_c/anime"
 
+require "pry"
+require "nokogiri"
+require "open-uri"
 
 
 
