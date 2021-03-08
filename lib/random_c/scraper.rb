@@ -2,7 +2,7 @@
 
 class RandomC::Scraper 
 
-    def self.scrape_anime_list
+    def self.scrape_anime
         doc = Nokogiri::HTML(open("https://randomc.net/2020/12/22/winter-preview-2021/"))
         anime = doc.css("div.preview_info table")
         puts anime.count 

@@ -15,7 +15,7 @@ class RandomC::Anime
 
 
     def self.all
-        RandomC::Scraper.scrape_anime_list if @@all.empty? 
+        RandomC::Scraper.scrape_anime if @@all.empty? 
         @@all     
     end 
 
