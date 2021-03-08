@@ -1,7 +1,6 @@
 class RandomC::Anime
 
-    attr_accessor :name
-
+    attr_accessor :name, :genre, :premiere_date, :episodes
 
     @@all =[]
 
@@ -16,8 +15,10 @@ class RandomC::Anime
 
 
     def self.all
+        RandomC::Scraper.scrape_anime_list if @@all.empty? 
         @@all     
     end 
+
 
 
 end 

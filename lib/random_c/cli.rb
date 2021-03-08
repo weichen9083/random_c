@@ -8,9 +8,6 @@ class RandomC::CLI
      end
      
      def get_anime_list
-        RandomC::Anime.new("anime1")
-        RandomC::Anime.new("anime2")
-        RandomC::Anime.new("anime3")
         puts "which anime you want to preview about?"
         @get_anime_list = RandomC::Anime.all
         @get_anime_list.each_with_index do |name, index|
@@ -19,7 +16,12 @@ class RandomC::CLI
      end 
      def ask_user_for_anime 
         choosen_anime = gets.strip.to_i
-        show_detail_on_the_anime(choosen_anime) if valid_input(choosen_anime, @get_anime_list)  
+        if valid_input(choosen_anime, @get_anime_list)  
+        show_detail_on_the_anime(choosen_anime) 
+        else 
+         puts "please select a valid option between 1-#{@get_anime_list.length}"
+         ask_user_for_anime 
+        end 
      end 
 
      def valid_input(input, data)
@@ -28,7 +30,11 @@ class RandomC::CLI
 
      def show_detail_on_the_anime(choosen_anime)
       anime = @get_anime_list[choosen_anime - 1]
-      puts "anime detail for #{anime.name}" 
+      puts "name: #{anime.name}" 
+      puts anime.genre
+      puts anime.premiere_date
+      puts anime.episodes
+
      end 
 
 end 
