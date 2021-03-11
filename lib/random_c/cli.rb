@@ -2,7 +2,12 @@
 class RandomC::CLI 
 
     def call
-        puts "Wecolme to randomc"
+        puts "Wecolme to randomc, do you want to take a look at winter preview list?(Y/N)"
+        answer = gets.strip 
+        if answer == "N" || answer == "n"
+         puts "alright, untill next time, goodbye"
+         exit 
+        end 
         get_anime_list
         ask_user_for_anime
         again

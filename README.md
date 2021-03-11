@@ -1,6 +1,7 @@
 # RandomC
 
-Welcome to random_c winter preview for 2021 ls
+Welcome to random_c winter preview for 2021 
+You will be given a list of all the anime that is release during the winter seasona and you can select anyone for more detail
 
 ## Installation
 
