@@ -5,7 +5,21 @@ class RandomC::CLI
         puts "Wecolme to randomc"
         get_anime_list
         ask_user_for_anime
+        again
      end
+
+     def again
+      puts "would you like to view another anime from the list?(Y/N)"
+      answer = gets.strip 
+      while answer == "Y" || answer == "y"
+      get_anime_list
+      ask_user_for_anime
+      puts "would you like to view another anime from the list?(Y/N)"
+      answer = gets.strip 
+      end  
+      puts "okay, have a nice day, end!!"
+      
+     end 
      
      def get_anime_list
         puts "which anime you want to preview about?"
@@ -30,11 +44,14 @@ class RandomC::CLI
 
      def show_detail_on_the_anime(choosen_anime)
       anime = @get_anime_list[choosen_anime - 1]
+      detail(anime)
+     end 
+
+     def detail(anime)
       puts "name: #{anime.name}" 
       puts anime.genre
       puts anime.premiere_date
       puts anime.episodes
-
      end 
 
 end 
